@@ -379,11 +379,9 @@ void Xoadoituongtrongfile(string name_file, string tk)
 
 	string line;
 	string data;
-	tk = Chuyenchuhoathanhchuthuong(tk);
 	while (!f.eof())
 	{
 		getline(f, line);
-		line = Chuyenchuhoathanhchuthuong(line);
 		int x = line.find(tk);
 		if (x < 0)
 		{
@@ -399,7 +397,6 @@ void Xoadoituongtrongfile(string name_file, string tk)
 
 void Suadoitrangthaiphong(string file_name, string t_maso, string t_trang_thai,  string t_ma_kh, string t_hoten)
 {
-	t_maso = Chuyenchuhoathanhchuthuong(t_maso);
 
 	fstream f;
 	f.open(file_name, ios::in);
@@ -408,7 +405,7 @@ void Suadoitrangthaiphong(string file_name, string t_maso, string t_trang_thai, 
 	while (!f.eof())
 	{
 		getline(f, line);
-		string t_line  = Chuyenchuhoathanhchuthuong(line);
+		string t_line;
 		int x = t_line.find(t_maso);
 		if (x >= 0)
 		{
@@ -438,7 +435,7 @@ void Suadoitrangthaiphong(string file_name, string t_maso, string t_trang_thai, 
 
 void Suadoitrangthaikhachhang(string file_name, string t_maso, string t_trang_thai)
 {
-	t_maso = Chuyenchuhoathanhchuthuong(t_maso);
+
 
 	fstream f;
 	f.open(file_name, ios::in);
@@ -447,7 +444,7 @@ void Suadoitrangthaikhachhang(string file_name, string t_maso, string t_trang_th
 	while (!f.eof())
 	{
 		getline(f, line);
-		string t_line = Chuyenchuhoathanhchuthuong(line);
+		string t_line;
 		int x = t_line.find(t_maso);
 		if (x >= 0)
 		{
@@ -475,7 +472,6 @@ void Suadoitrangthaikhachhang(string file_name, string t_maso, string t_trang_th
 
 string Get_trangthaiphong(string file_name, string t_maso)
 {
-	t_maso = Chuyenchuhoathanhchuthuong(t_maso);
 
 	fstream f;
 	f.open(file_name, ios::in);
@@ -484,7 +480,7 @@ string Get_trangthaiphong(string file_name, string t_maso)
 	while (!f.eof())
 	{
 		getline(f, line);
-		string t_line = Chuyenchuhoathanhchuthuong(line);
+		string t_line;
 		int x = t_line.find(t_maso);
 		if (x >= 0)
 		{
@@ -509,7 +505,6 @@ string Get_trangthaiphong(string file_name, string t_maso)
 }
 string Get_trangthaikhachhang(string file_name, string t_maso)
 {
-	t_maso = Chuyenchuhoathanhchuthuong(t_maso);
 
 	fstream f;
 	f.open(file_name, ios::in);
@@ -518,7 +513,7 @@ string Get_trangthaikhachhang(string file_name, string t_maso)
 	while (!f.eof())
 	{
 		getline(f, line);
-		string t_line = Chuyenchuhoathanhchuthuong(line);
+		string t_line;
 		int x = t_line.find(t_maso);
 		if (x >= 0)
 		{
@@ -601,15 +596,3 @@ string Xoa_khoang_trang_thua(string t_data)
 	return str;
 }
 
-string Chuyenchuhoathanhchuthuong(string str)
-{
-	string data = "";
-	for (size_t i = 0; i < str.length(); i++)
-	{
-		if (65 < str.at(i) && str.at(i) < 90)
-			data += (str.at(i) + 32);
-		else
-			data += str.at(i);
-	}
-	return data;
-}

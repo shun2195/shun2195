@@ -125,7 +125,7 @@ void Hoadon_theophongkh(){
 		}
 	
 		str = Xoa_khoang_trang_thua(str);
-		str = Chuyenchuhoathanhchuthuong(str);
+		str = (str);
 		gotoxy(38, 13 + 60 - 5);
 		cout << "Trang " << vt_trang << "/" << sl_trang << endl;
 	
@@ -151,7 +151,7 @@ void Hoadon_theophongkh(){
 					else tt_data += line.at(i);
 				}
 				string tt_str = " ";
-				tt_str = Chuyenchuhoathanhchuthuong(str_dt[luachon_tk]);
+				tt_str = (str_dt[luachon_tk]);
 
 				size_t x = tt_str.find(str);
 				if (x != string::npos)
@@ -291,7 +291,7 @@ void Hoadon_theongay(){
 		}
 	
 		str = Xoa_khoang_trang_thua(str);
-		str = Chuyenchuhoathanhchuthuong(str);
+		str = (str);
 		gotoxy(38, 13 + 60 - 5);
 		cout << "Trang " << vt_trang << "/" << sl_trang << endl;
 	
@@ -317,7 +317,7 @@ void Hoadon_theongay(){
 					else tt_data += line.at(i);
 				}
 				string tt_str = " ";
-				tt_str = Chuyenchuhoathanhchuthuong(str_dt[luachon_tk]);
+				tt_str = (str_dt[luachon_tk]);
 
 				size_t x = tt_str.find(str);
 				if (x != string::npos)
@@ -392,7 +392,7 @@ void Lichsu_luutru(){
 					else tt_data += line.at(i);
 				}
 				string tt_str = " ";
-				tt_str = Chuyenchuhoathanhchuthuong(str_dt[luachon_tk]);
+				tt_str = (str_dt[luachon_tk]);
 
 				size_t x = tt_str.find(str);
 				if (x != string::npos)

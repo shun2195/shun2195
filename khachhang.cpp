@@ -310,7 +310,7 @@ void Hienthi_Ql_khachhang_ds() {
     string danhmuc_hang[20] = { "Stt", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
     string danhmuc_cot[10] = { "Stt", "Ma so", "Ho ten", "Ngay sinh", "Gioi tinh", "So dien thoai" };
     int vt_cot[10] = { 7, 22, 32, 20, 18, 22 };
-    int vt_hang[15] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+    int vt_hang[20] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 
     string data = Getfile("Ql_tt_khachhang.txt");
 
@@ -372,8 +372,10 @@ void Hienthi_Ql_khachhang_ds() {
             if (c == ';') {
                 // Khi gặp dấu ';', xử lý dữ liệu
                 t_data = Xoa_khoang_trang_thua(str_tt_kh);
+                if(cnt_cot < 7){
                 kht2_kh[cnt_hang][cnt_cot].SetNoiDung(t_data);
                 kht2_kh[cnt_hang][cnt_cot].AddNoidung();
+            	}
                 cnt_cot++;
                 str_tt_kh = "";
             } else {
@@ -515,7 +517,6 @@ void Hien_thi_timkiem_khachhang()
 	}
 	
 	str = Xoa_khoang_trang_thua(str);
-	str = Chuyenchuhoathanhchuthuong(str);
 
 	gotoxy(38, 13 + 60 - 5);
 	cout << "Trang " << vt_trang << "/" << sl_trang << endl;
@@ -545,9 +546,9 @@ void Hien_thi_timkiem_khachhang()
 			string tt_str = " ";
 
 			if(luachon_tk != 2)
-			    tt_str = Chuyenchuhoathanhchuthuong(str_dt[luachon_tk]);
+			    tt_str = (str_dt[luachon_tk]);
 			else 
-				tt_str = Chuyenchuhoathanhchuthuong(str_dt[4]);
+				tt_str = (str_dt[4]);
 
 			int x = tt_str.find(str);
 			if (x >= 0)
@@ -587,7 +588,7 @@ KhachHang Tim_kiem_ma_kh(string t_makh)
 	//int count_line = 1,
 	int count_vtdt = 0;
 	string str = Xoa_khoang_trang_thua(t_makh);
-	str = Chuyenchuhoathanhchuthuong(str);
+	str = (str);
 	while (!f.eof())
 	{
 		getline(f, line);
@@ -606,7 +607,7 @@ KhachHang Tim_kiem_ma_kh(string t_makh)
 				else tt_data += line.at(i);
 			}
 			string tt_str = " ";
-			tt_str = Chuyenchuhoathanhchuthuong(str_dt[0]);
+			tt_str = (str_dt[0]);
 
 			if (tt_str == str)
 			{

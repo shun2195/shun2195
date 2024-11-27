@@ -35,6 +35,5 @@ string Get_trangthaikhachhang(string file_name, string t_maso);
 string Xoa_khoang_trang_dau_cuoi(string data);
 string Xoa_khoang_trang_giua(string data);
 string Xoa_khoang_trang_thua(string t_data);
-string Chuyenchuhoathanhchuthuong(string str);
 
 #endif

@@ -208,11 +208,11 @@ ThanhToan Get_tt_thanh_toan(string t_ma_phong)
 	//int count_line = 1, 
 	int count_vtdt = 0;
 	string str = Xoa_khoang_trang_thua(t_ma_phong);
-	str = Chuyenchuhoathanhchuthuong(str);
+	str = (str);
 	while (!f.eof())
 	{
 		getline(f, line);
-		std::string t_line = Chuyenchuhoathanhchuthuong(line);
+		std::string t_line = (line);
 		int t_vt = t_line.find(str);
 		if (t_vt >= 0)
 		{
@@ -229,7 +229,7 @@ ThanhToan Get_tt_thanh_toan(string t_ma_phong)
 				else tt_data += line.at(i);
 			}
 			string tt_str = " ";
-			tt_str = Chuyenchuhoathanhchuthuong(str_dt[0]);
+			tt_str = (str_dt[0]);
 
 			if (tt_str == str)
 			{

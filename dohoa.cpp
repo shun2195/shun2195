@@ -511,7 +511,10 @@ void Table::CreatTable(Khunghienthi kht[50][50], int &sh, int &sc)
 	{
 		for (int i = 0; i < sc; i++)
 		{
-			kht[j][i].SetKhungHienThi(y, x, this->doronghang[j], this->dorongcot[i], this->maubackgound, "");
+			kht[j][i].SetToaDo(y, x);
+			kht[j][i].SetKichThuoc(this->doronghang[j], this->dorongcot[i]);
+			kht[j][i].SetBackground(this->maubackgound);
+			kht[j][i].SetNoiDung("");
 			if (j == 0) kht[j][i].SetNoiDung(this->tencot[i]);
 			if (i == 0) kht[j][i].SetNoiDung(this->tenhang[j]);
 			kht[j][i].DrawKhunghienthi();
@@ -561,7 +564,10 @@ void Table::CreatTable(Khunghienthi kht[50][50])
 	{
 		for (int i = 0; i < sc; i++)
 		{
-			kht[j][i].SetKhungHienThi(y, x, this->doronghang[j], this->dorongcot[i], this->maubackgound, "");
+			kht[j][i].SetToaDo(y, x);
+			kht[j][i].SetKichThuoc(this->doronghang[j], this->dorongcot[i]);
+			kht[j][i].SetBackground(this->maubackgound);
+			kht[j][i].SetNoiDung("");
 			if (j == 0) kht[j][i].SetNoiDung(this->tencot[i]);
 			if (i == 0) kht[j][i].SetNoiDung(this->tenhang[j]);
 			kht[j][i].DrawKhunghienthi();

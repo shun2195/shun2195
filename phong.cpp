@@ -233,12 +233,15 @@ void Hienthi_Ql_phong_ds()
 	string danhmuc_cot[10] = { "Stt", "Ma phong", "Loai phong", "Don gia",
 									"Trang thai", "Ma khach hang", "Ho ten"};
 	int vt_cot[10] = { 7, 14, 16, 20, 16, 21, 28 };
-	int vt_hang[15] = { 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 };
+	int vt_hang[20] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 
 	string data = Getfile("Ql_tt_phong.txt");
-
-	Table tb2(7, 12, vt_hang, vt_cot, 0);
-	tb2.Set_danhmuc(danhmuc_hang, danhmuc_cot);
+	while (!data.empty() && (data.back() == '\n' || data.back() == '\r' || data.back() == ' ')) {
+    data.pop_back();
+	}
+	Table tb(7, 12, vt_hang, vt_cot, 0);
+	tb.Set_danhmuc(danhmuc_hang, danhmuc_cot);
+	tb.CreatTable(kht, sh, sc);
 	
 	/******************************** Xu ly data *****************************************************/
 
@@ -256,62 +259,63 @@ void Hienthi_Ql_phong_ds()
         }
     }
 
+
     // Tính số trang
-    int sl_trang = (sl_dong / 14) + (sl_dong % 14 != 0);
+    int sl_trang = (int)(sl_dong / 14) + (sl_dong % 14 != 0);
 
     while (true) {
         cnt_hang = 0;
-        value_count_ph = (vt_trang - 1) * 14 ;  // Dòng bắt đầu cho trang
         
-        tb2.CreatTable(kht2_ph, sh2_ph, sc2_ph);
+        tb.CreatTable(kht, sh, sc);
         // Tính dòng bắt đầu và dòng kết thúc cho trang hiện tại
-        int dong_bd = (vt_trang - 1) * 14;
+        int dong_bd = (vt_trang - 1) * 14 + 1;
         int dong_kt = vt_trang * 14;
-
+        
         // Duyệt qua từng dòng dữ liệu
         int vt_dong = 0;
-        for (size_t i = 0; i < data.length(); i++) {
+        
+		for (size_t i = 0; i < data.length(); i++) {
             c = data.at(i);
 
             if (c == '\n') {
                 vt_dong++;
-
-                if (vt_dong >= dong_bd && vt_dong <= dong_kt && vt_dong < sl_dong) {
+                
+                if (vt_dong >= dong_bd && vt_dong <= dong_kt) {
                     // Chỉ hiển thị dữ liệu trong phạm vi dòng của trang
-                    value_count_ph++;  // Tăng giá trị số thứ tự
-                    cnt_hang++;  // Tăng chỉ số hàng
-
+					cnt_hang++;  // Tăng chỉ số hàng
                     // Gán số thứ tự dòng
-                    kht2_ph[cnt_hang][0].SetNoiDung(to_string(value_count_ph));
-                    kht2_ph[cnt_hang][0].AddNoidung();
-
+                    kht[cnt_hang][0].SetNoiDung(to_string(vt_dong));
+                    kht[cnt_hang][0].AddNoidung();
+					
+					
                     cnt_cot = 1;
                     str_tt_phong = "";
+                    
                 }
-
-                c = ' ';
-            }
-
+            		c = ' ';
+			}                
+            
             if (c == ';') {
                 // Khi gặp dấu ';', xử lý dữ liệu
                 t_data = Xoa_khoang_trang_thua(str_tt_phong);
-                kht2_ph[cnt_hang][cnt_cot].SetNoiDung(t_data);
-                kht2_ph[cnt_hang][cnt_cot].AddNoidung();
+                if(cnt_cot < 7){
+				kht[cnt_hang][cnt_cot].SetNoiDung(t_data);
+               	kht[cnt_hang][cnt_cot].AddNoidung();
+               	}
                 cnt_cot++;
                 str_tt_phong = "";
             } else {
                 // Nếu không phải ký tự đặc biệt, tiếp tục thu thập dữ liệu
                 str_tt_phong += c;
             }
+            
         }
-		kht2_ph[cnt_hang][0].SetNoiDung(to_string(value_count_ph));
-		
         // Sau khi đã đi qua hết dữ liệu của trang, hiển thị tổng dòng và trang
         gotoxy(39, 13);
         cout << "Tong:" << sl_dong << endl;
         gotoxy(38, 13 + 60 - 5);
         cout << "Trang " << vt_trang << "/" << sl_trang << endl;
-
+		
         // Đọc phím từ người dùng
         char kk = _getch();
         if (kk == 27) {
@@ -342,7 +346,7 @@ void Hienthi_Timkiem_phong()
 	                                 "Tim kiem loai phong"};
 	for (int i = 0; i < sl_tk; i++)
 	{
-		tk_htlc[i].SetKhungHienThi(6, 13+ 114 + i / sl_tk, 3, 114 / sl_tk, 0, danhmuc_tk_htlc[i]);
+		tk_htlc[i].SetKhungHienThi(6, 13 + 114 * i / sl_tk, 3, 114 / sl_tk, 0, danhmuc_tk_htlc[i]);
 		tk_htlc[i].DrawKhunghienthi();
 	}
 	
@@ -352,7 +356,7 @@ void Hienthi_Timkiem_phong()
 	string danhmuc_cot[10] = { "Stt", "Ma phong", "Loai phong", "Don gia",
 								 "Trang thai","Ma khach hang " , "Ho ten"};
 	int vt_cot[10] = { 7, 14, 16, 20, 16, 21, 28 };
-	int vt_hang[15] = { 3,3,3,3,3,3,3,3,3,3,3 };
+	int vt_hang[20] = { 3,3,3,3,3,3,3,3,3,3,3 };
 
 	Khunghienthi kht_tk[50][50];
 
@@ -441,7 +445,6 @@ void Hienthi_Timkiem_phong()
 		}
 	
 		str = Xoa_khoang_trang_thua(str);
-		str = Chuyenchuhoathanhchuthuong(str);
 		gotoxy(38, 13 + 60 - 5);
 		cout << "Trang " << vt_trang << "/" << sl_trang << endl;
 	
@@ -467,7 +470,7 @@ void Hienthi_Timkiem_phong()
 					else tt_data += line.at(i);
 				}
 				string tt_str = " ";
-				tt_str = Chuyenchuhoathanhchuthuong(str_dt[luachon_tk]);
+				tt_str = str_dt[luachon_tk];
 
 				size_t x = tt_str.find(str);
 				if (x != string::npos)
@@ -484,7 +487,7 @@ void Hienthi_Timkiem_phong()
 			}
 		}
 		f.close();
-    }
+}
 
 void Thucthi_Timkiem_phong() 
 { 
@@ -507,7 +510,6 @@ Phong Maphong_Timkiem_phong(string t_maphong)
 	//int count_line = 1, 
 	int count_vtdt = 0;
 	string str = Xoa_khoang_trang_thua(t_maphong);
-	       str = Chuyenchuhoathanhchuthuong(str);
 	while (!f.eof())
 	{
 		getline(f, line);
@@ -526,7 +528,7 @@ Phong Maphong_Timkiem_phong(string t_maphong)
 				else tt_data += line.at(i);
 			}
 			string tt_str = " ";
-			tt_str = Chuyenchuhoathanhchuthuong(str_dt[0]);
+			tt_str = (str_dt[0]);
 
 			if (tt_str  == str)
 			{

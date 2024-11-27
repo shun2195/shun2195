@@ -209,7 +209,7 @@ void Create_main(int &lua_chon)
 {
 	drawKhungGiaoDien("GIAO DIEN CHINH");
 	
-	string danhmuc[25] = { " 1.  Quan ly phong                  ",        // 0  ----
+	string danhmuc[28] = { " 1.  Quan ly phong                  ",        // 0  ----
 						   " 2.  Quan ly khach hang             ",        // 1
 						   " 3.  Quan ly thanh toan             ",        // 2
 						   " 4.  Thong ke hoa don               ",        // 3
@@ -234,12 +234,15 @@ void Create_main(int &lua_chon)
 							   " 4.2  Hoa don theo ngay         ",        // 22
 							   " 4.3  Lich su luu tru           ",        // 23
 							   " 4.4  Tro lai                   ",        // 24 ****
+							   " 5.1  Doanh thu theo phong      ",        // 25 ----
+							   " 5.2  Doanh thu theo thang      ",        // 26
+							   " 5.3  Tro lai                   ",        // 27 ****
 	};
 
 	Docfile(10, 80, "gui_main.txt");
 
 	Show_point(FALSE);
-	Khunghienthi ht_main[25];
+	Khunghienthi ht_main[28];
 	for (int i = 0; i < 6 ; i++)
 	{
 		ht_main[i].SetKhungHienThi(6 + i * 5, 13, 5, 60, 0, danhmuc[i]);
@@ -260,6 +263,10 @@ void Create_main(int &lua_chon)
 	for (int i = 21; i < 25; i++)
 	{
 		ht_main[i].SetKhungHienThi(6 + (i - 21) * 4, 80, 4, 45, 0, danhmuc[i]);
+	}
+	for (int i = 25; i < 28; i++)
+	{
+		ht_main[i].SetKhungHienThi(6 + (i - 25) * 4, 80, 4, 45, 0, danhmuc[i]);
 	}
 
 	int vt_func0 = 5, vt_func1 = 0;
@@ -311,6 +318,13 @@ void Create_main(int &lua_chon)
 						if (vt_func1 < 21) vt_func1 = 24;
 						ht_main[vt_func1].Doinen(1);
 					}
+					if (vt_func0 == 4)
+					{
+						ht_main[vt_func1].Doinen(0);
+						vt_func1--;
+						if (vt_func1 < 25) vt_func1 = 28;
+						ht_main[vt_func1].Doinen(1);
+					}
 				}
 			}
 
@@ -353,6 +367,13 @@ void Create_main(int &lua_chon)
 						if (vt_func1 > 24) vt_func1 = 21;
 						ht_main[vt_func1].Doinen(1);
 					}
+					if (vt_func0 == 4)
+					{
+						ht_main[vt_func1].Doinen(0);
+						vt_func1++;
+						if (vt_func1 > 28) vt_func1 = 25;
+						ht_main[vt_func1].Doinen(1);
+					}
 				}
 			}
 
@@ -391,7 +412,11 @@ void Create_main(int &lua_chon)
 					}
 				}
 				if (vt_func0 == 4){
-					
+					vt_func1 = 25;
+					for (int i = 25; i < 28; i++)
+					{
+						ht_main[i].DrawKhunghienthi();
+					}
 				}
 				if (vt_func0 == 5)
 				{
@@ -406,7 +431,7 @@ void Create_main(int &lua_chon)
 			if (lop == 0)
 			{
 				lop = 1;
-				if (vt_func0 == 4)
+				if (vt_func0 == 5)
 				{
 					lua_chon = 100;
 					break;
@@ -417,7 +442,7 @@ void Create_main(int &lua_chon)
 			else
 			{
 				lop = 0;
-				if (vt_func1 == 11 || vt_func1 == 17 || vt_func1 == 20 || vt_func1 == 24)
+				if (vt_func1 == 11 || vt_func1 == 17 || vt_func1 == 20 || vt_func1 == 24 || vt_func1 == 27)
 				{
 					ht_main[vt_func1].Doinen(0);
 				}

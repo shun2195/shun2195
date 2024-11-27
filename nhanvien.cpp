@@ -154,7 +154,6 @@ NhanVien Tim_kiem_nv(string tk_nv){
 	//int count_line = 1, 
 	int count_vtdt = 0;
 	string str = Xoa_khoang_trang_thua(tk_nv);
-	       str = Chuyenchuhoathanhchuthuong(str);
 	while (!f.eof())
 	{
 		getline(f, line);
@@ -172,8 +171,7 @@ NhanVien Tim_kiem_nv(string tk_nv){
 				}
 				else tt_data += line.at(i);
 			}
-			string tt_str = " ";
-			tt_str = Chuyenchuhoathanhchuthuong(str_dt[5]);
+			string tt_str = str_dt[5];
 
 			if (tt_str  == str)
 			{
