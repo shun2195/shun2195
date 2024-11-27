@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	//1111111111
+	//con phuc xam xam xam xam
 	int t_exit = 0;
 	int lua_chon = 0;
 	Show_point(false);

@@ -17,8 +17,8 @@ LeftChar=1
 Order=4,6,8,0,9,11,12,14,5,13,7,16,2,10,15,1,17,18,3
 Focused=0
 [Editor_0]
-CursorCol=5
-CursorRow=22
+CursorCol=28
+CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_3]
