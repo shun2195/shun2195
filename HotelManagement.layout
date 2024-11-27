@@ -15,10 +15,10 @@ TopLine=297
 LeftChar=1
 [Editors]
 Order=4,6,8,0,9,11,12,14,5,13,7,16,2,10,15,1,17,18,3
-Focused=3
+Focused=0
 [Editor_0]
-CursorCol=10
-CursorRow=42
+CursorCol=17
+CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_3]
