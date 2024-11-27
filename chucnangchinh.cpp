@@ -390,6 +390,9 @@ void Create_main(int &lua_chon)
 						ht_main[i].DrawKhunghienthi();
 					}
 				}
+				if (vt_func0 == 4){
+					
+				}
 				if (vt_func0 == 5)
 				{
 					SetBGColor(0);
@@ -414,7 +417,7 @@ void Create_main(int &lua_chon)
 			else
 			{
 				lop = 0;
-				if (vt_func1 == 10 || vt_func1 == 16 || vt_func1 == 19 || vt_func1 == 23)
+				if (vt_func1 == 11 || vt_func1 == 17 || vt_func1 == 20 || vt_func1 == 24)
 				{
 					ht_main[vt_func1].Doinen(0);
 				}
@@ -645,23 +648,19 @@ int Create_quen_mk(){
 	drawKhungGiaoDien("GIAO DIEN QUEN MAT KHAU");
 	
 	NhanVien dt_nv;
-	string danhmuc_hang1 [2] = { "Tai khoan",
-									"So dien thoai"
-								};
-	string danhmuc_hang2 [2] = { "Mat khau moi",
+	string danhmuc_hang [10] = { "Tai khoan",
+									"So dien thoai",
+									"Mat khau moi",
 									"Nhap lai mat khau moi"
-								};							
+								};						
 	string danhmuc_cot[10] = { "", " " };
 	int vt_cot[10] = { 25, 40 };
-	int vt_hang[10] = { 5, 5 };
+	int vt_hang[10] = { 5, 5, 5, 5 };
 
-	Table tb1(8, 12, vt_hang, vt_cot, 0);
-	tb1.Set_danhmuc(danhmuc_hang1, danhmuc_cot);
-	tb1.CreatTable(kht1, sh, sc);
+	Table tb(8, 12, vt_hang, vt_cot, 0);
+	tb.Set_danhmuc(danhmuc_hang, danhmuc_cot);
+	tb.CreatTable(kht, sh, sc);
 	
-	Table tb2(20, 12, vt_hang, vt_cot, 0);
-	tb2.Set_danhmuc(danhmuc_hang2, danhmuc_cot);
-	tb2.CreatTable(kht2, sh, sc);
 	
 	drawXNhan_Thoat();
 	
@@ -672,16 +671,10 @@ int Create_quen_mk(){
 	string str[50];
 	int flag_exit = 0, step = 0;
 	
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < sh; i++)
 	{
-		dien_x[i] = kht1[i][1].Get0x() + 2;
-		dien_y[i] = kht1[i][1].Get0y() + 5 / 2;
-		str[i] = "";
-	}
-	for (int i = 2; i < 4; i++)
-	{
-		dien_x[i] = kht2[i][1].Get0x() + 2;
-		dien_y[i] = kht2[i][1].Get0y() + 5 / 2;
+		dien_x[i] = kht[i][1].Get0x() + 2;
+		dien_y[i] = kht[i][1].Get0y() + 5 / 2;
 		str[i] = "";
 	}
 	
@@ -751,18 +744,22 @@ int Create_quen_mk(){
 			{
 				string str_tk_nv = Xoa_khoang_trang_thua(str[0]);
 				dt_nv = Tim_kiem_nv(str_tk_nv);
-				if (dt_nv.Get_taiKhoan() != "")
-				{
-					str[0] = dt_nv.Get_taiKhoan();
-					str[1] = dt_nv.Get_SDT();
-					str[2] = dt_nv.Get_matKhau(); 
-					for (tt_cnt = 0; tt_cnt < sh; tt_cnt++)
+				
+                // Gọi hàm XuLyQuenMK để xác nhận tài khoản và số điện thoại
+                if (XuLyQuenMK(str[0], str[1])) {
+                    str[0] = dt_nv.Get_taiKhoan();
+                    str[1] = dt_nv.Get_SDT();
+                    for (tt_cnt = 0; tt_cnt < sh; tt_cnt++)
 					{
 						gotoxy(dien_y[tt_cnt], dien_x[tt_cnt]);
 						cout << str[tt_cnt];
 					}
-					step = 1;
-				}
+                    step = 1;  // Chuyển sang bước tiếp theo (nhập mật khẩu mới)
+                    
+                } else {
+                    gotoxy(33, 90);
+                    cout << "Tai khoan hoac so dien thoai sai!" << endl;
+                }
 			}
 			else {
 				tt_cnt++;
@@ -811,7 +808,7 @@ int Create_quen_mk(){
 						}
 						tt_nv += "\n";
 						textcolor(WHITE);
-						Xoadoituongtrongfile(qlnv_file_name, dt_nv.Get_ma_nv());
+						Xoadoituongtrongfile(qlnv_file_name, dt_nv.Get_taiKhoan());
 						Ghifile(qlnv_file_name, tt_nv);
 						gotoxy(29, 90);
 						cout << "Ban da luu" << endl;

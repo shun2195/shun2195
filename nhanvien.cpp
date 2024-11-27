@@ -88,6 +88,15 @@ string TaoMaNV(const string& ten, const string& sdt) {
 
     return maNV;
 }
+
+bool XuLyQuenMK(const string& TK, const string& SDT){
+	NhanVien dt_nv;
+	dt_nv = Tim_kiem_nv(TK);
+	if (dt_nv.Get_taiKhoan() != "" && dt_nv.Get_SDT() == SDT) {
+        return true;  // Nếu hợp lệ
+    }
+    return false;  // Nếu không hợp lệ
+}
 bool xacNhanMK(const string& MK1, const string& MK2){
 	return MK1 == MK2;
 }
@@ -137,14 +146,14 @@ bool xuLyDangNhap(NhanVien*& ds_nv , string username, string password) {
 	
 }
 
-NhanVien Tim_kiem_nv(string ma_nv){
+NhanVien Tim_kiem_nv(string tk_nv){
 	NhanVien t_nv;
 	fstream f;
 	f.open(qlnv_file_name, ios::in);
 	string line, str_dt[8], tt_data = " ";
 	//int count_line = 1, 
 	int count_vtdt = 0;
-	string str = Xoa_khoang_trang_thua(ma_nv);
+	string str = Xoa_khoang_trang_thua(tk_nv);
 	       str = Chuyenchuhoathanhchuthuong(str);
 	while (!f.eof())
 	{
@@ -164,7 +173,7 @@ NhanVien Tim_kiem_nv(string ma_nv){
 				else tt_data += line.at(i);
 			}
 			string tt_str = " ";
-			tt_str = Chuyenchuhoathanhchuthuong(str_dt[0]);
+			tt_str = Chuyenchuhoathanhchuthuong(str_dt[5]);
 
 			if (tt_str  == str)
 			{

@@ -55,8 +55,9 @@ public:
     friend bool xuLyDangNhap(NhanVien*& ds_nv, string username, string password);
     friend void docfileNV(NhanVien*& ds_nv);
 };
+	bool XuLyQuenMK(const string& TK, const string& SDT);
 	bool xacNhanMK(const string& MK1, const string& MK2);
 	string TaoMaNV(const string& ten, const string& sdt);
-	NhanVien Tim_kiem_nv(string ma_nv);
+	NhanVien Tim_kiem_nv(string tk_nv);
 
 #endif

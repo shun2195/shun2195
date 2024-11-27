@@ -239,7 +239,6 @@ void Hienthi_Ql_phong_ds()
 
 	Table tb2(7, 12, vt_hang, vt_cot, 0);
 	tb2.Set_danhmuc(danhmuc_hang, danhmuc_cot);
-	tb2.CreatTable(kht2_ph, sh2_ph, sc2_ph);
 	
 	/******************************** Xu ly data *****************************************************/
 
