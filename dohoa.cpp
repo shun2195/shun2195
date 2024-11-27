@@ -146,7 +146,13 @@ void Khunghienthi::SetNoiDung(string t_noidung)
 {
 	this->noidung = t_noidung;
 }
-
+void Khunghienthi::SetKhungHienThi(int y, int x, int h, int w, int color, string noi_dung)
+{
+	SetToaDo(y, x);
+	SetKichThuoc(h, w);
+	SetBackground(color);
+	SetNoiDung(noi_dung);
+}
 void Khunghienthi::DrawKhunghienthi()
 {
 	int x = this->toado_0x;
@@ -392,17 +398,11 @@ void drawKhungGiaoDien(string tengd){
 void drawXoaHuy(){
 	gotoxy(23, 90);
 	cout << "Ban thue xoa ?" << endl;
-
-	lcht1.SetToaDo(25, 80);
-	lcht1.SetKichThuoc(3, 20);
-	lcht1.SetBackground(0);
-	lcht1.SetNoiDung("Xoa");
+	
+	lcht1.SetKhungHienThi(25, 80, 3, 20, 0, "Xoa");
 	lcht1.DrawKhunghienthi();
 
-	lcht2.SetToaDo(25, 105);
-	lcht2.SetKichThuoc(3, 20);
-	lcht2.SetBackground(0);
-	lcht2.SetNoiDung("Huy");
+	lcht2.SetKhungHienThi(25, 105, 3, 20, 0, "Huy");
 	lcht2.DrawKhunghienthi();
 
 	gotoxy(30, 90);
@@ -415,16 +415,10 @@ void drawXNhan_Thoat(){
 	gotoxy(23, 90);
 	cout << "Ban xac nhan hay thoat ?" << endl;
 
-	lcht1.SetToaDo(25, 80);
-	lcht1.SetKichThuoc(3,20);
-	lcht1.SetBackground(0);
-	lcht1.SetNoiDung("Xac Nhan");
+	lcht1.SetKhungHienThi(25, 80, 3, 20, 0, "Xac Nhan");
 	lcht1.DrawKhunghienthi();
 
-	lcht2.SetToaDo(25, 105);
-	lcht2.SetKichThuoc(3, 20);
-	lcht2.SetBackground(0);
-	lcht2.SetNoiDung("Thoat");
+	lcht2.SetKhungHienThi(25, 105, 3, 20, 0, "Thoat");
 	lcht2.DrawKhunghienthi();
 
 	gotoxy(30, 90);
@@ -517,10 +511,7 @@ void Table::CreatTable(Khunghienthi kht[50][50], int &sh, int &sc)
 	{
 		for (int i = 0; i < sc; i++)
 		{
-			kht[j][i].SetToaDo(y, x);
-			kht[j][i].SetKichThuoc(this->doronghang[j], this->dorongcot[i]);
-			kht[j][i].SetBackground(this->maubackgound);
-			kht[j][i].SetNoiDung("");
+			kht[j][i].SetKhungHienThi(y, x, this->doronghang[j], this->dorongcot[i], this->maubackgound, "");
 			if (j == 0) kht[j][i].SetNoiDung(this->tencot[i]);
 			if (i == 0) kht[j][i].SetNoiDung(this->tenhang[j]);
 			kht[j][i].DrawKhunghienthi();
@@ -570,10 +561,7 @@ void Table::CreatTable(Khunghienthi kht[50][50])
 	{
 		for (int i = 0; i < sc; i++)
 		{
-			kht[j][i].SetToaDo(y, x);
-			kht[j][i].SetKichThuoc(this->doronghang[j], this->dorongcot[i]);
-			kht[j][i].SetBackground(this->maubackgound);
-			kht[j][i].SetNoiDung("");
+			kht[j][i].SetKhungHienThi(y, x, this->doronghang[j], this->dorongcot[i], this->maubackgound, "");
 			if (j == 0) kht[j][i].SetNoiDung(this->tencot[i]);
 			if (i == 0) kht[j][i].SetNoiDung(this->tenhang[j]);
 			kht[j][i].DrawKhunghienthi();

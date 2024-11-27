@@ -66,7 +66,6 @@ void SetBGColor(WORD color);
 void setColor(int maunen, int mauchu);
 void Show_point(bool value);
 
-
 class Khunghienthi
 {
 private:
@@ -81,12 +80,13 @@ public:
 	Khunghienthi();
 	Khunghienthi(int y, int x, int h, int w, int bg, int mode_vien);
 	Khunghienthi(int y, int x, int h, int w, int bg);
-
+	
 	void SetToaDo(int ,int );
 	void SetKichThuoc(int ,int );
 	void SetModeVien(int );
 	void SetBackground(int );
 	void SetNoiDung(string);
+	void SetKhungHienThi( int, int, int, int, int, string);
 	int  Get0y();
 	int  Get0x();
 	string GetNoiDung();
