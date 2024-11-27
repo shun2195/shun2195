@@ -22,6 +22,7 @@ class HoaDon{
 		string Set_ma_hd(string mahd);
 };
 
+extern string lhd_file_name;
 void Hoadon_theophongkh();
 void Hoadon_theongay();
 void Lichsu_luutru();

@@ -357,7 +357,7 @@ void Create_main(int &lua_chon)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1++;
-						if (vt_func1 > 20) vt_func1 = 18;
+						if (vt_func1 > 2) vt_func1 = 18;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 3)
@@ -405,7 +405,7 @@ void Create_main(int &lua_chon)
 				}
 				if (vt_func0 == 3)
 				{
-					vt_func1 = 20;
+					vt_func1 = 21;
 					for (int i = 21; i < 25; i++)
 					{
 						ht_main[i].DrawKhunghienthi();

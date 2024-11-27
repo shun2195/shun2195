@@ -226,7 +226,6 @@ int Xuly_Ql_phong_Them_phong()
 
 void Hienthi_Ql_phong_ds()
 {
-	value_count = 0;
 	drawKhungGiaoDien("GIAO DIEN DANH SACH PHONG");
 	/**********************************************************/
 	string danhmuc_hang[20] = { "Stt", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
@@ -235,10 +234,7 @@ void Hienthi_Ql_phong_ds()
 	int vt_cot[10] = { 7, 14, 16, 20, 16, 21, 28 };
 	int vt_hang[20] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 
-	string data = Getfile("Ql_tt_phong.txt");
-	while (!data.empty() && (data.back() == '\n' || data.back() == '\r' || data.back() == ' ')) {
-    data.pop_back();
-	}
+	
 	Table tb(7, 12, vt_hang, vt_cot, 0);
 	tb.Set_danhmuc(danhmuc_hang, danhmuc_cot);
 	tb.CreatTable(kht, sh, sc);
@@ -248,9 +244,12 @@ void Hienthi_Ql_phong_ds()
 	char c;
     int cnt_hang = 0, cnt_cot = 0;
     string str_tt_phong = "", t_data;
-    int value_count_ph = 0;
     int vt_trang = 1, sl_dong = 0;
 
+	string data = Getfile("Ql_tt_phong.txt");
+	while (!data.empty() && (data.back() == '\n' || data.back() == '\r' || data.back() == ' ')) {
+    data.pop_back();
+	}
     // Đếm số dòng trong dữ liệu
     for (size_t i = 0; i < data.length(); i++) {
         c = data.at(i);
@@ -350,7 +349,7 @@ void Hienthi_Timkiem_phong()
 		tk_htlc[i].DrawKhunghienthi();
 	}
 	
-	gotoxy(13, 13 + 60 - 7/2); cout << "KET QUA"<<endl;
+	gotoxy(13, 13 + 114/2  - 9/2); cout << "- KET QUA -" << endl;
 
 	string danhmuc_hang[20] = { "Stt", " ", " ", " ", " ", " ", " ", " ", " ", " "," " };
 	string danhmuc_cot[10] = { "Stt", "Ma phong", "Loai phong", "Don gia",

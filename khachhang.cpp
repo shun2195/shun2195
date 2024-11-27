@@ -424,7 +424,7 @@ void Hien_thi_timkiem_khachhang()
 		tk_htlc[i].DrawKhunghienthi();
 	}
 
-	gotoxy(13, 13 + 60 - 7 / 2); cout << "KET QUA" << endl;
+	gotoxy(13, 13 + 114/2  - 9/2); cout << "- KET QUA -" << endl;
 
 	string danhmuc_hang[20] = { "Stt", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 	string danhmuc_cot[10] = { "Stt", "Ma so","Ho ten", "Ngay sinh", "Gioi tinh",
