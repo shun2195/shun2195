@@ -18,28 +18,16 @@ int Create_login(){
 		tb.Set_danhmuc(danhmuc_hang, danhmuc_cot);
 		tb.CreatTable(kht, sh, sc);
 
-		lcht1.SetToaDo(24, 45);
-		lcht1.SetKichThuoc(3,20);
-		lcht1.SetBackground(0);
-		lcht1.SetNoiDung("Xac nhan");
+		lcht1.SetKhungHienThi(24, 45, 3, 20, 0, "Xac nhan");
 		lcht1.DrawKhunghienthi();
 
-		lcht2.SetToaDo(24, 75);
-		lcht2.SetKichThuoc(3, 25);
-		lcht2.SetBackground(0);
-		lcht2.SetNoiDung("Quen mat khau");
+		lcht2.SetKhungHienThi(24, 75, 3, 25, 0, "Quen mat khau");
 		lcht2.DrawKhunghienthi();
 		
-		lcht3.SetToaDo(28, 45);
-		lcht3.SetKichThuoc(3, 55);
-		lcht3.SetBackground(0);
-		lcht3.SetNoiDung("Tao tai khoan");
+		lcht3.SetKhungHienThi(28, 45, 3, 55, 0, "Tao tai khoan");
 		lcht3.DrawKhunghienthi();
 		
-		lcht4.SetToaDo(38, 120);
-		lcht4.SetKichThuoc(3, 10);
-		lcht4.SetBackground(0);
-		lcht4.SetNoiDung("Thoat");
+		lcht4.SetKhungHienThi(38, 120, 3, 10, 0, "Thoat");
 		lcht4.DrawKhunghienthi();
 					
 		gotoxy(32, 50);
@@ -254,39 +242,24 @@ void Create_main(int &lua_chon)
 	Khunghienthi ht_main[25];
 	for (int i = 0; i < 6 ; i++)
 	{
-		ht_main[i].SetToaDo(6 + i * 5, 13);
-		ht_main[i].SetKichThuoc(5, 60);
-		ht_main[i].SetBackground(0);
-		ht_main[i].SetNoiDung(danhmuc[i]);
+		ht_main[i].SetKhungHienThi(6 + i * 5, 13, 5, 60, 0, danhmuc[i]);
 		ht_main[i].DrawKhunghienthi();
 	}
 	for (int i = 6; i < 12; i++)
 	{
-		ht_main[i].SetToaDo(6 + (i - 6) * 4, 80);
-		ht_main[i].SetKichThuoc(4, 45);
-		ht_main[i].SetBackground(0);
-		ht_main[i].SetNoiDung(danhmuc[i]);
+		ht_main[i].SetKhungHienThi(6 + (i - 6) * 4, 80, 4, 45, 0, danhmuc[i]);
 	}
 	for (int i = 12; i < 18; i++)
 	{
-		ht_main[i].SetToaDo(6 + (i - 12) * 4, 80);
-		ht_main[i].SetKichThuoc(4, 45);
-		ht_main[i].SetBackground(0);
-		ht_main[i].SetNoiDung(danhmuc[i]);
+		ht_main[i].SetKhungHienThi(6 + (i - 12) * 4, 80, 4, 45, 0, danhmuc[i]);
 	}
 	for (int i = 18; i < 21; i++)
 	{
-		ht_main[i].SetToaDo(6 + (i - 18) * 4, 80);
-		ht_main[i].SetKichThuoc(4, 45);
-		ht_main[i].SetBackground(0);
-		ht_main[i].SetNoiDung(danhmuc[i]);
+		ht_main[i].SetKhungHienThi(6 + (i - 18) * 4, 80, 4, 45, 0, danhmuc[i]);
 	}
 	for (int i = 21; i < 25; i++)
 	{
-		ht_main[i].SetToaDo(6 + (i - 21) * 4, 80);
-		ht_main[i].SetKichThuoc(4, 45);
-		ht_main[i].SetBackground(0);
-		ht_main[i].SetNoiDung(danhmuc[i]);
+		ht_main[i].SetKhungHienThi(6 + (i - 21) * 4, 80, 4, 45, 0, danhmuc[i]);
 	}
 
 	int vt_func0 = 5, vt_func1 = 0;

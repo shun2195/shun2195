@@ -26,10 +26,7 @@ void Hoadon_theophongkh(){
 	                                 "Tim kiem theo ten khach hang"};
 	for (int i = 0; i < sl_tk; i++)
 	{
-		tk_htlc[i].SetToaDo(6, 13+ 114 * i / sl_tk);
-		tk_htlc[i].SetKichThuoc(3, 114 / sl_tk);
-		tk_htlc[i].SetBackground(0);
-		tk_htlc[i].SetNoiDung(danhmuc_tk_htlc[i]);
+		tk_htlc[i].SetKhungHienThi(6, 13+ 114 * i / sl_tk, 3, 114 / sl_tk, 0, danhmuc_tk_htlc[i]);
 		tk_htlc[i].DrawKhunghienthi();
 	}
 	
@@ -195,10 +192,7 @@ void Hoadon_theongay(){
 	                                 "Tim kiem theo ngay tra"};
 	for (int i = 0; i < sl_tk; i++)
 	{
-		tk_htlc[i].SetToaDo(6, 13+ 114 * i / sl_tk);
-		tk_htlc[i].SetKichThuoc(3, 114 / sl_tk);
-		tk_htlc[i].SetBackground(0);
-		tk_htlc[i].SetNoiDung(danhmuc_tk_htlc[i]);
+		tk_htlc[i].SetKhungHienThi(6, 13+ 114 * i / sl_tk, 3, 114 / sl_tk, 0, danhmuc_tk_htlc[i]);
 		tk_htlc[i].DrawKhunghienthi();
 	}
 	
