@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+	//1111111111
 	int t_exit = 0;
 	int lua_chon = 0;
 	Show_point(false);
