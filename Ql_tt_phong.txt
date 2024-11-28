@@ -1,4 +1,4 @@
-101 ; Don ; 350000 ; Lock ; NHN884 ; Nguyen Hong Nhung ;
+101 ; Don ; 350000 ; Ok ;  ;  ; 
 102 ; Don ; 350000 ; Ok ;  ;  ;
 103 ; Doi ; 500000 ; Ok ;  ;  ;
 104 ; Doi ; 700000 ; Ok ;  ;  ;

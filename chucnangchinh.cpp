@@ -207,69 +207,76 @@ int Create_login(){
 
 void Create_main(int &lua_chon)
 {
-	drawKhungGiaoDien("GIAO DIEN CHINH");
+	drawKhungGiaoDien("GIAO DIEN NHAN VIEN");
 	
-	string danhmuc[28] = { " 1.  Quan ly phong                  ",        // 0  ----
+	string danhmuc[24] = { " 1.  Quan ly phong                  ",        // 0  ----
 						   " 2.  Quan ly khach hang             ",        // 1
 						   " 3.  Quan ly thanh toan             ",        // 2
 						   " 4.  Thong ke hoa don               ",        // 3
-						   " 5.  Thong ke doanh thu             ",        // 4
-						   " 6.  Dang xuat                      ",        // 5  ****
-							   " 1.1  Tim kiem phong            ",        // 6  ----
-							   " 1.2  Them phong                ",        // 7
-							   " 1.3  Sua thong tin phong       ",        // 8
-							   " 1.4  Xoa phong                 ",        // 9
-							   " 1.5  Danh sach phong           ",        // 10
-							   " 1.6  Tro lai                   ",        // 11 ****
-							   " 2.1  Tim kiem khach hang       ",        // 12 -----
-							   " 2.2  Them khach hang           ",        // 13
-							   " 2.3  Sua thong tin khach hang  ",        // 14
-							   " 2.4  Xoa khach hang            ",        // 15
-							   " 2.5  Danh sach khach hang      ",        // 16
-							   " 2.6  Tro lai                   ",        // 17 *****
-							   " 3.1  Dat phong                 ",        // 18 ----
-							   " 3.2  Tra phong                 ",        // 19
-							   " 3.3  Tro lai                   ",        // 20 ****
-							   " 4.1  Hoa don theo phong / KH   ",        // 21 -----
-							   " 4.2  Hoa don theo ngay         ",        // 22
-							   " 4.3  Lich su luu tru           ",        // 23
-							   " 4.4  Tro lai                   ",        // 24 ****
-							   " 5.1  Doanh thu theo phong      ",        // 25 ----
-							   " 5.2  Doanh thu theo thang      ",        // 26
-							   " 5.3  Tro lai                   ",        // 27 ****
+						   " 5.  Dang xuat                      ",        // 4  ****
+							   " 1.1  Tim kiem phong            ",        // 5  ----
+							   " 1.2  Them phong                ",        // 6
+							   " 1.3  Sua thong tin phong       ",        // 7
+							   " 1.4  Xoa phong                 ",        // 8
+							   " 1.5  Danh sach phong           ",        // 9
+							   " 1.6  Tro lai                   ",        // 10 ****
+							   " 2.1  Tim kiem khach hang       ",        // 11 -----
+							   " 2.2  Them khach hang           ",        // 12
+							   " 2.3  Sua thong tin khach hang  ",        // 13
+							   " 2.4  Xoa khach hang            ",        // 14
+							   " 2.5  Danh sach khach hang      ",        // 15
+							   " 2.6  Tro lai                   ",        // 16 *****
+							   " 3.1  Dat phong                 ",        // 17 ----
+							   " 3.2  Tra phong                 ",        // 18
+							   " 3.3  Tro lai                   ",        // 19 ****
+							   " 4.1  Hoa don theo phong / KH   ",        // 20 -----
+							   " 4.2  Hoa don theo ngay         ",        // 21
+							   " 4.3  Lich su luu tru           ",        // 22
+							   " 4.4  Tro lai                   ",        // 23 ****
 	};
 
 	Docfile(10, 80, "gui_main.txt");
 
 	Show_point(FALSE);
-	Khunghienthi ht_main[28];
-	for (int i = 0; i < 6 ; i++)
+	Khunghienthi ht_main[24];
+	for (int i = 0; i < 5; i++)
 	{
-		ht_main[i].SetKhungHienThi(6 + i * 5, 13, 5, 60, 0, danhmuc[i]);
+		ht_main[i].SetToaDo(6 + i * 6, 13);
+		ht_main[i].SetKichThuoc(6, 60);
+		ht_main[i].SetBackground(0);
+		ht_main[i].SetNoiDung(danhmuc[i]);
 		ht_main[i].DrawKhunghienthi();
 	}
-	for (int i = 6; i < 12; i++)
+	for (int i = 5; i < 11; i++)
 	{
-		ht_main[i].SetKhungHienThi(6 + (i - 6) * 4, 80, 4, 45, 0, danhmuc[i]);
+		ht_main[i].SetToaDo(6 + (i - 5) * 4, 80);
+		ht_main[i].SetKichThuoc(4, 45);
+		ht_main[i].SetBackground(0);
+		ht_main[i].SetNoiDung(danhmuc[i]);
 	}
-	for (int i = 12; i < 18; i++)
+	for (int i = 11; i < 17; i++)
 	{
-		ht_main[i].SetKhungHienThi(6 + (i - 12) * 4, 80, 4, 45, 0, danhmuc[i]);
+		ht_main[i].SetToaDo(6 + (i - 11) * 4, 80);
+		ht_main[i].SetKichThuoc(4, 45);
+		ht_main[i].SetBackground(0);
+		ht_main[i].SetNoiDung(danhmuc[i]);
 	}
-	for (int i = 18; i < 21; i++)
+	for (int i = 17; i < 20; i++)
 	{
-		ht_main[i].SetKhungHienThi(6 + (i - 18) * 4, 80, 4, 45, 0, danhmuc[i]);
+		ht_main[i].SetToaDo(6 + (i - 17) * 4, 80);
+		ht_main[i].SetKichThuoc(4, 45);
+		ht_main[i].SetBackground(0);
+		ht_main[i].SetNoiDung(danhmuc[i]);
 	}
-	for (int i = 21; i < 25; i++)
+	for (int i = 20; i < 24; i++)
 	{
-		ht_main[i].SetKhungHienThi(6 + (i - 21) * 4, 80, 4, 45, 0, danhmuc[i]);
-	}
-	for (int i = 25; i < 28; i++)
-	{
-		ht_main[i].SetKhungHienThi(6 + (i - 25) * 4, 80, 4, 45, 0, danhmuc[i]);
+		ht_main[i].SetToaDo(6 + (i - 20) * 4, 80);
+		ht_main[i].SetKichThuoc(4, 45);
+		ht_main[i].SetBackground(0);
+		ht_main[i].SetNoiDung(danhmuc[i]);
 	}
 
-	int vt_func0 = 5, vt_func1 = 0;
+	int vt_func0 = 4, vt_func1 = 0;
 	int lop = 0;
 	while (1) {
 		gotoxy(7, 11);
@@ -285,7 +292,7 @@ void Create_main(int &lua_chon)
 				{
 					ht_main[vt_func0].Doinen(0);
 					vt_func0--;
-					if (vt_func0 < 0) vt_func0 = 5;
+					if (vt_func0 < 0) vt_func0 = 4;
 					ht_main[vt_func0].Doinen(1);
 				}
 				else
@@ -294,35 +301,28 @@ void Create_main(int &lua_chon)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1--;
-						if (vt_func1 < 6) vt_func1 = 11;
+						if (vt_func1 < 5) vt_func1 = 10;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 1)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1--;
-						if (vt_func1 < 12) vt_func1 = 17;
+						if (vt_func1 < 11) vt_func1 = 16;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 2)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1--;
-						if (vt_func1 < 18) vt_func1 = 20;
+						if (vt_func1 < 17) vt_func1 = 19;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 3)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1--;
-						if (vt_func1 < 21) vt_func1 = 24;
-						ht_main[vt_func1].Doinen(1);
-					}
-					if (vt_func0 == 4)
-					{
-						ht_main[vt_func1].Doinen(0);
-						vt_func1--;
-						if (vt_func1 < 25) vt_func1 = 28;
+						if (vt_func1 < 20) vt_func1 = 23;
 						ht_main[vt_func1].Doinen(1);
 					}
 				}
@@ -334,7 +334,7 @@ void Create_main(int &lua_chon)
 				{
 					ht_main[vt_func0].Doinen(0);
 					vt_func0++;
-					if (vt_func0 == 6) vt_func0 = 0;
+					if (vt_func0 == 5) vt_func0 = 0;
 					ht_main[vt_func0].Doinen(1);
 				}
 				else
@@ -343,35 +343,28 @@ void Create_main(int &lua_chon)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1++;
-						if (vt_func1 > 11) vt_func1 = 6;
+						if (vt_func1 > 10) vt_func1 = 5;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 1)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1++;
-						if (vt_func1 > 17) vt_func1 = 12;
+						if (vt_func1 > 16) vt_func1 = 11;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 2)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1++;
-						if (vt_func1 > 2) vt_func1 = 18;
+						if (vt_func1 > 19) vt_func1 = 17;
 						ht_main[vt_func1].Doinen(1);
 					}
 					if (vt_func0 == 3)
 					{
 						ht_main[vt_func1].Doinen(0);
 						vt_func1++;
-						if (vt_func1 > 24) vt_func1 = 21;
-						ht_main[vt_func1].Doinen(1);
-					}
-					if (vt_func0 == 4)
-					{
-						ht_main[vt_func1].Doinen(0);
-						vt_func1++;
-						if (vt_func1 > 28) vt_func1 = 25;
+						if (vt_func1 > 23) vt_func1 = 20;
 						ht_main[vt_func1].Doinen(1);
 					}
 				}
@@ -381,44 +374,37 @@ void Create_main(int &lua_chon)
 			{
 				if (vt_func0 == 0)
 				{
-					vt_func1 = 6;
-					for (int i = 6; i < 12; i++)
+					vt_func1 = 5;
+					for (int i = 5; i < 11; i++)
 					{
 						ht_main[i].DrawKhunghienthi();
 					}
 				}
 				if (vt_func0 == 1)
 				{
-					vt_func1 = 12;
-					for (int i = 12; i < 18; i++)
+					vt_func1 = 11;
+					for (int i = 11; i < 17; i++)
 					{
 						ht_main[i].DrawKhunghienthi();
 					}
 				}
 				if (vt_func0 == 2)
 				{
-					vt_func1 = 18;
-					for (int i = 18; i < 21; i++)
+					vt_func1 = 17;
+					for (int i = 17; i < 20; i++)
 					{
 						ht_main[i].DrawKhunghienthi();
 					}
 				}
 				if (vt_func0 == 3)
 				{
-					vt_func1 = 21;
-					for (int i = 21; i < 25; i++)
+					vt_func1 = 20;
+					for (int i = 20; i < 24; i++)
 					{
 						ht_main[i].DrawKhunghienthi();
 					}
 				}
-				if (vt_func0 == 4){
-					vt_func1 = 25;
-					for (int i = 25; i < 28; i++)
-					{
-						ht_main[i].DrawKhunghienthi();
-					}
-				}
-				if (vt_func0 == 5)
+				if (vt_func0 == 4)
 				{
 					SetBGColor(0);
 					Docfile(10, 80, "gui_main.txt");
@@ -431,7 +417,7 @@ void Create_main(int &lua_chon)
 			if (lop == 0)
 			{
 				lop = 1;
-				if (vt_func0 == 5)
+				if (vt_func0 == 4)
 				{
 					lua_chon = 100;
 					break;
@@ -442,7 +428,7 @@ void Create_main(int &lua_chon)
 			else
 			{
 				lop = 0;
-				if (vt_func1 == 11 || vt_func1 == 17 || vt_func1 == 20 || vt_func1 == 24 || vt_func1 == 27)
+				if (vt_func1 == 10 || vt_func1 == 16 || vt_func1 == 19 || vt_func1 == 23)
 				{
 					ht_main[vt_func1].Doinen(0);
 				}
@@ -765,32 +751,12 @@ int Create_quen_mk(){
 
 		if (kk == 13)
 		{
-			if (step == 0)
-			{
-				string str_tk_nv = Xoa_khoang_trang_thua(str[0]);
-				dt_nv = Tim_kiem_nv(str_tk_nv);
-				
-                // Gọi hàm XuLyQuenMK để xác nhận tài khoản và số điện thoại
-                if (XuLyQuenMK(str[0], str[1])) {
-                    str[0] = dt_nv.Get_taiKhoan();
-                    str[1] = dt_nv.Get_SDT();
-                    for (tt_cnt = 0; tt_cnt < sh; tt_cnt++)
-					{
-						gotoxy(dien_y[tt_cnt], dien_x[tt_cnt]);
-						cout << str[tt_cnt];
-					}
-                    step = 1;  // Chuyển sang bước tiếp theo (nhập mật khẩu mới)
-                    
-                } else {
-                    gotoxy(33, 90);
-                    cout << "Tai khoan hoac so dien thoai sai!" << endl;
-                }
-			}
-			else {
+			
 				tt_cnt++;
 				if (tt_cnt > 3) tt_cnt = 0;
 				gotoxy(dien_y[tt_cnt], dien_x[tt_cnt]);
-			}
+
+		
 		}
 
 		if (kk == 19 && step != 0)
@@ -831,6 +797,21 @@ int Create_quen_mk(){
 						{
 							tt_nv += (str[i] + " ; ");
 						}
+						
+                		// Gọi hàm XuLyQuenMK để xác nhận tài khoản và số điện thoại
+                		if (XuLyQuenMK(str[0], str[1])) {
+                    		for (tt_cnt = 0; tt_cnt < sh; tt_cnt++)
+							{
+							gotoxy(dien_y[tt_cnt], dien_x[tt_cnt]);
+							cout << str[tt_cnt];
+							}
+                    
+                		} else {
+                    	gotoxy(33, 90);
+                    	cout << "Tai khoan hoac so dien thoai sai!" << endl;
+                		}	
+					}
+					else {
 						tt_nv += "\n";
 						textcolor(WHITE);
 						Xoadoituongtrongfile(qlnv_file_name, dt_nv.Get_taiKhoan());

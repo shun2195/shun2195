@@ -1,8 +1,0 @@
-	Ca phe		20.000
-	Nuoc ngot	15.000
-	Tra		20.000
-	Mi tom 		15.000
-	Giat la		20.000
-	Don phong	100.000
-	Phu thu 	150.000
-	

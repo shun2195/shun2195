@@ -440,6 +440,3 @@ int Xuly_Ql_tra_phong(){
 	_getch();
 	return 0;
 }
-void Hienthi_ds_thuetra(){
-	
-}

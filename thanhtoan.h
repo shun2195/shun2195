@@ -44,6 +44,5 @@ class ThanhToan{
 	int Xuly_Ql_dat_phong();
 	void Khung_Ql_tra_phong();
 	int Xuly_Ql_tra_phong();
-	void Hienthi_ds_thuetra();
 	
 #endif
