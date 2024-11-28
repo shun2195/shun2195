@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=3
 CompilerSettings=0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;1;0;0;0;16;0;0;0
-UnitCount=19
+UnitCount=17
 
 [VersionInfo]
 Major=1
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit10]
-FileName=nhanvien.cpp
+FileName=phong.cpp
 Folder=
 Compile=1
 Link=1
@@ -69,28 +69,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 CompileCpp=1
-
-[Unit4]
-FileName=chucnangchinh.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
 
 [Unit5]
-FileName=chucnangchinh.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit7]
 FileName=khachhang.h
 CompileCpp=1
 Folder=
@@ -100,8 +80,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit7]
+FileName=dohoa.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit8]
-FileName=dohoa.cpp
+FileName=nhanvien.cpp
 Folder=
 Compile=1
 Link=1
@@ -111,26 +101,6 @@ BuildCmd=
 CompileCpp=1
 
 [Unit11]
-FileName=nhanvien.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit12]
-FileName=phong.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit13]
 FileName=phong.h
 CompileCpp=1
 Folder=
@@ -140,7 +110,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit14]
+[Unit12]
 FileName=hoadon.h
 CompileCpp=1
 Folder=
@@ -150,7 +120,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit15]
+[Unit13]
 FileName=hoadon.cpp
 CompileCpp=1
 Folder=
@@ -160,8 +130,28 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit16]
+[Unit14]
 FileName=thanhtoan.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit15]
+FileName=thanhtoan.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit16]
+FileName=chucnangphu.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -201,7 +191,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=dohoa.h
+FileName=nhanvien.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -241,7 +231,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit17]
-FileName=thanhtoan.cpp
+FileName=chucnangphu.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -281,6 +271,16 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
+FileName=dohoa.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
 FileName=khachhang.cpp
 CompileCpp=1
 Folder=

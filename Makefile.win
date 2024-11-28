@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o date.o chucnangchinh.o khachhang.o dohoa.o nhanvien.o phong.o hoadon.o thanhtoan.o chucnangphu.o
-LINKOBJ  = main.o date.o chucnangchinh.o khachhang.o dohoa.o nhanvien.o phong.o hoadon.o thanhtoan.o chucnangphu.o
+OBJ      = main.o date.o khachhang.o dohoa.o nhanvien.o phong.o hoadon.o thanhtoan.o chucnangphu.o
+LINKOBJ  = main.o date.o khachhang.o dohoa.o nhanvien.o phong.o hoadon.o thanhtoan.o chucnangphu.o
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -luser32 -lkernel32 -lgdi32 -luser32 -lkernel32 -lcomdlg32 -luuid -lole32 -loleaut32 -m32 -g3
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
@@ -29,9 +29,6 @@ main.o: main.cpp
 
 date.o: date.cpp
 	$(CPP) -c date.cpp -o date.o $(CXXFLAGS)
-
-chucnangchinh.o: chucnangchinh.cpp
-	$(CPP) -c chucnangchinh.cpp -o chucnangchinh.o $(CXXFLAGS)
 
 khachhang.o: khachhang.cpp
 	$(CPP) -c khachhang.cpp -o khachhang.o $(CXXFLAGS)

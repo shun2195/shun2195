@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
-#include "chucnangchinh.h"
+#include "nhanvien.h"
+#include "hoadon.h"
 
 using namespace std;
 

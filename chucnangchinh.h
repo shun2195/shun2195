@@ -17,9 +17,5 @@
 
 using namespace std;
 
-int Create_login();
-void Create_main(int &lua_chon);
-int Create_account();
-int Create_quen_mk();
 
 #endif

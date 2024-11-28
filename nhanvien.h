@@ -59,5 +59,9 @@ public:
 	bool xacNhanMK(const string& MK1, const string& MK2);
 	string TaoMaNV(const string& ten, const string& sdt);
 	NhanVien Tim_kiem_nv(string tk_nv);
+	
+	int Create_login();
+	void Create_main(int &lua_chon);
+	int Create_account();
 
 #endif
